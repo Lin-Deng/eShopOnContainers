@@ -5,9 +5,9 @@
 @inject IIdentityParser<ApplicationUser> UserManager
 
 @{
-     ViewData["Title"] = "My Cart";
+     ViewData["Title"] = "我的购物车";
      var headerList = new List<Header>() {
-          new Header() { Controller = "Catalog", Text = "Back to catalog" }};
+          new Header() { Controller = "Catalog", Text = "返回目录" }};
 }
 
 <form method="post" id="cartForm">

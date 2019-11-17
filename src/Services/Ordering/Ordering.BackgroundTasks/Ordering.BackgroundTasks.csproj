@@ -16,7 +16,6 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Autofac" Version="4.9.4" />
     <PackageReference Include="Dapper" Version="2.0.30" />
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="$(Microsoft_AspNetCore_App)" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="$(Microsoft_AspNetCore_Diagnostics_HealthChecks)" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0" />
@@ -26,7 +25,9 @@
     <PackageReference Include="Serilog.Settings.Configuration" Version="$(Serilog_Settings_Configuration)" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00824" />
     <PackageReference Include="Serilog.Sinks.Http" Version="5.2.0" />
-    <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.1-dev-00159" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="4.1.0-dev-00166" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>

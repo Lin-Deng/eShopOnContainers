@@ -3,9 +3,9 @@
 @model Microsoft.eShopOnContainers.WebMVC.ViewModels.Order
 
 @{
-     ViewData["Title"] = "Order Detail";
+     ViewData["Title"] = "订单详情";
      var headerList= new List<Header>() {
-     new Header() { Controller = "Catalog", Text = "Back to catalog" } };
+     new Header() { Controller = "Catalog", Text = "返回目录" } };
 }
 
 <div class="esh-orders_detail">
@@ -14,10 +14,10 @@
     <div class="container">
         <section class="esh-orders_detail-section">
             <article class="esh-orders_detail-titles row">
-                <section class="esh-orders_detail-title col-3">Order number</section>
-                <section class="esh-orders_detail-title col-3">Date</section>
-                <section class="esh-orders_detail-title col-3">Total</section>
-                <section class="esh-orders_detail-title col-3">Status</section>
+                <section class="esh-orders_detail-title col-3">订单号</section>
+                <section class="esh-orders_detail-title col-3">日期</section>
+                <section class="esh-orders_detail-title col-3">总价</section>
+                <section class="esh-orders_detail-title col-3">状态</section>
             </article>
 
             <article class="esh-orders_detail-items row">
@@ -30,7 +30,7 @@
         
         <section class="esh-orders_detail-section">
             <article class="esh-orders_detail-titles row">
-                <section class="esh-orders_detail-title col-12">Description</section>
+                <section class="esh-orders_detail-title col-12">描述</section>
             </article>
 
             <article class="esh-orders_detail-items row">
@@ -40,7 +40,7 @@
 
         <section class="esh-orders_detail-section">
             <article class="esh-orders_detail-titles row">
-                <section class="esh-orders_detail-title col-12">Shiping address</section>
+                <section class="esh-orders_detail-title col-12">运输地址</section>
             </article>
 
             <article class="esh-orders_detail-items row">
@@ -58,7 +58,7 @@
 
         <section class="esh-orders_detail-section">
             <article class="esh-orders_detail-titles row">
-                <section class="esh-orders_detail-title col-12">ORDER DETAILS</section>
+                <section class="esh-orders_detail-title col-12">订单详情</section>
             </article>
 
             @for (int i = 0; i < Model.OrderItems.Count; i++)
@@ -79,7 +79,7 @@
         <section class="esh-orders_detail-section esh-orders_detail-section--right">
             <article class="esh-orders_detail-titles esh-basket-titles--clean row">
                 <section class="esh-orders_detail-title col-9"></section>
-                <section class="esh-orders_detail-title col-2">TOTAL</section>
+                <section class="esh-orders_detail-title col-2">总计</section>
             </article>
 
             <article class="esh-orders_detail-items row">

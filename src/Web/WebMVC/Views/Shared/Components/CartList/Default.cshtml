@@ -1,7 +1,7 @@
 @model Microsoft.eShopOnContainers.WebMVC.ViewModels.Basket
 
 @{
-    ViewData["Title"] = "My Cart";
+    ViewData["Title"] = "我的购物车";
 }
 
 <div class="container">
@@ -23,11 +23,11 @@
                 </div>
             }
 
-            <section class="esh-basket-title col-3">Product</section>
+            <section class="esh-basket-title col-3">产品</section>
             <section class="esh-basket-title col-3 hidden-lg-down"></section>
-            <section class="esh-basket-title col-2">Price</section>
-            <section class="esh-basket-title col-2">Quantity</section>
-            <section class="esh-basket-title col-2">Cost</section>
+            <section class="esh-basket-title col-2">价格</section>
+            <section class="esh-basket-title col-2">质量</section>
+            <section class="esh-basket-title col-2">花费</section>
         </article>
 
         @for (int i = 0; i < Model.Items.Count; i++)

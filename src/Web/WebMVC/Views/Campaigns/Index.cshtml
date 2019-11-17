@@ -1,10 +1,10 @@
 @model WebMVC.ViewModels.CampaignViewModel
 
 @{
-    ViewData["Title"] = "Campaigns";
+    ViewData["Title"] = "活动";
 
     var headerList= new List<Header>() {
-        new Header() { Controller = "Catalog", Text = "Back to catalog" } };
+        new Header() { Controller = "Catalog", Text = "返回" } };
 }
 
 <section class="esh-campaigns-hero">
@@ -28,11 +28,11 @@
 
         <div class="col-md-12">
             <div class="esh-campaigns-items" style="font-weight: 300;">
-                UPDATE USER LOCATION
+                更新用户地址
             </div>
             <br />
             <form class="form-inline" asp-action="CreateNewUserLocation" method="post">
-                <label class="sr-only" for="longitudeInput">Name</label>
+                <label class="sr-only" for="longitudeInput">名称</label>
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -71,7 +71,7 @@
         else
         {
     <div class="esh-campaigns-items row">
-        THERE ARE NO CAMPAIGNS
+        现在没有活动
     </div>
         }
 </div>

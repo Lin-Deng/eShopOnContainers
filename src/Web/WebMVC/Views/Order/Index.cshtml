@@ -5,9 +5,9 @@
 @{
      ViewData["Title"] = "My Orders";
      var headerList= new List<Header>() {
-        new Header() { Controller = "Catalog", Text = "Back to catalog" },
+        new Header() { Controller = "Catalog", Text = "返回目录" },
         new Header() { Text = " / " },
-        new Header() { Controller = "OrderManagement", Text = "Orders Management" } };
+        new Header() { Controller = "OrderManagement", Text = "订单管理" } };
 }
 
 <div class="esh-orders">
@@ -15,10 +15,10 @@
 
     <div class="container">
         <article class="esh-orders-titles row">
-            <section class="esh-orders-title col-2">Order number</section>
-            <section class="esh-orders-title col-4">Date</section>
-            <section class="esh-orders-title col-2">Total</section>
-            <section class="esh-orders-title col-2">Status</section>
+            <section class="esh-orders-title col-2">订单号</section>
+            <section class="esh-orders-title col-4">日期</section>
+            <section class="esh-orders-title col-2">总计</section>
+            <section class="esh-orders-title col-2">状态</section>
             <section class="esh-orders-title col-2"></section>
         </article>
         @if (Model != null && Model.Any())

@@ -54,7 +54,7 @@ services:
       - rabbitmq
 
   ordering-backgroundtasks:
-    image: ${REGISTRY:-eshop}/ordering.backgroundtasks:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${REGISTRY:-eshop}/ordering-backgroundtasks:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
       dockerfile: Services/Ordering/Ordering.BackgroundTasks/Dockerfile    

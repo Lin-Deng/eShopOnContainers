@@ -1,0 +1,5 @@
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    dockerComposeFile: '**/src/docker-compose.yml'
+    action: 'Run a Docker Compose command'

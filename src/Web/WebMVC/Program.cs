@@ -44,7 +44,6 @@ namespace Microsoft.eShopOnContainers.WebMVC
             WebHost.CreateDefaultBuilder(args)
                 .CaptureStartupErrors(false)
                 .UseStartup<Startup>()
-                .UseApplicationInsights()
                 .UseConfiguration(configuration)
                 .UseSerilog()
                 .Build();

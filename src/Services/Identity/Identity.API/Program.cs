@@ -32,7 +32,7 @@ namespace Microsoft.eShopOnContainers.Services.Identity.API
                 host.MigrateDbContext<PersistedGrantDbContext>((_, __) => { })
                     .MigrateDbContext<ApplicationDbContext>((context, services) =>
                     {
-                        var env = services.GetService<IHostingEnvironment>();
+                        var env = services.GetService<IWebHostEnvironment>();
                         var logger = services.GetService<ILogger<ApplicationDbContextSeed>>();
                         var settings = services.GetService<IOptions<AppSettings>>();
 
@@ -67,7 +67,6 @@ namespace Microsoft.eShopOnContainers.Services.Identity.API
             WebHost.CreateDefaultBuilder(args)
                 .CaptureStartupErrors(false)
                 .UseStartup<Startup>()
-                .UseApplicationInsights()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseConfiguration(configuration)
                 .UseSerilog()

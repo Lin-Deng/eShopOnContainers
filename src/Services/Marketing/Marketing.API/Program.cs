@@ -56,7 +56,6 @@
             WebHost.CreateDefaultBuilder(args)
                 .CaptureStartupErrors(false)
                 .UseStartup<Startup>()
-                .UseApplicationInsights()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseWebRoot("Pics")
                 .UseConfiguration(configuration)

@@ -27,7 +27,7 @@ namespace Microsoft.eShopOnContainers.BuildingBlocks.IntegrationEventLogEF.Servi
             _integrationEventLogContext = new IntegrationEventLogContext(
                 new DbContextOptionsBuilder<IntegrationEventLogContext>()
                     .UseSqlServer(_dbConnection)
-                    .ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning))
+                    .ConfigureWarnings(warnings => warnings.Throw())
                     .Options);
 
             _eventTypes = Assembly.Load(Assembly.GetEntryAssembly().FullName)

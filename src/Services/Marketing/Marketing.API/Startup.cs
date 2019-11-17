@@ -75,7 +75,7 @@
 
                 // Changing default behavior when client evaluation occurs to throw. 
                 // Default in EF Core would be to log a warning when client evaluation is performed.
-                options.ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning));
+                options.ConfigureWarnings(warnings => warnings.Throw());
                 //Check Client vs. Server evaluation: https://docs.microsoft.com/en-us/ef/core/querying/client-eval
             });
 
@@ -152,7 +152,7 @@
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             //loggerFactory.AddAzureWebAppDiagnostics();
             //loggerFactory.AddApplicationInsights(app.ApplicationServices, LogLevel.Trace);

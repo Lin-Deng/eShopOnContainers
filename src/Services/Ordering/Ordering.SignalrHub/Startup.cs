@@ -51,8 +51,7 @@ namespace Ordering.SignalrHub
             if (Configuration.GetValue<string>("IsClusterEnv") == bool.TrueString)
             {
                 services
-                    .AddSignalR()
-                    .AddRedis(Configuration["SignalrStoreConnectionString"]);
+                    .AddSignalR().AddStackExchangeRedis(Configuration["SignalrStoreConnectionString"]);
             }
             else
             {

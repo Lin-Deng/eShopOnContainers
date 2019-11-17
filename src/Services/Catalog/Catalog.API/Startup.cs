@@ -215,7 +215,7 @@ namespace Microsoft.eShopOnContainers.Services.Catalog.API
 
                 // Changing default behavior when client evaluation occurs to throw. 
                 // Default in EF Core would be to log a warning when client evaluation is performed.
-                options.ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning));
+                options.ConfigureWarnings(warnings => warnings.Throw());
                 //Check Client vs. Server evaluation: https://docs.microsoft.com/en-us/ef/core/querying/client-eval
             });
 

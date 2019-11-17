@@ -59,7 +59,8 @@ namespace Webhooks.API
                 .AddTransient<IIdentityService, IdentityService>()
                 .AddTransient<IGrantUrlTesterService, GrantUrlTesterService>()
                 .AddTransient<IWebhooksRetriever, WebhooksRetriever>()
-                .AddTransient<IWebhooksSender, WebhooksSender>();
+                .AddTransient<IWebhooksSender, WebhooksSender>()
+                .AddApplicationInsightsTelemetry();
 
             var container = new ContainerBuilder();
             container.Populate(services);
@@ -68,8 +69,6 @@ namespace Webhooks.API
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddApplicationInsights(app.ApplicationServices, LogLevel.Trace);
-
             var pathBase = Configuration["PATH_BASE"];
 
             if (!string.IsNullOrEmpty(pathBase))
@@ -175,7 +174,7 @@ namespace Webhooks.API
 
                 // Changing default behavior when client evaluation occurs to throw. 
                 // Default in EF Core would be to log a warning when client evaluation is performed.
-                options.ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning));
+                options.ConfigureWarnings(warnings => warnings.Throw());
                 //Check Client vs. Server evaluation: https://docs.microsoft.com/en-us/ef/core/querying/client-eval
             });
 

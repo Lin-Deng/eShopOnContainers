@@ -14,12 +14,12 @@ RUN npm run build:prod
 FROM mcr.microsoft.com/dotnet/core/sdk AS build
 WORKDIR /src
 
-COPY scripts scripts/
+COPY src/scripts scripts/
 
-COPY ApiGateways/*/*/*.csproj csproj-files/
-COPY BuildingBlocks/*/*/*.csproj csproj-files/
-COPY Services/*/*/*.csproj csproj-files/
-COPY Web/*/*.csproj csproj-files/
+COPY src/ApiGateways/*/*/*.csproj csproj-files/
+COPY src/BuildingBlocks/*/*/*.csproj csproj-files/
+COPY src/Services/*/*/*.csproj csproj-files/
+COPY src/Web/*/*.csproj csproj-files/
 
 COPY . .
 COPY --from=node-build /web/wwwroot /src/Web/WebSPA/wwwroot/

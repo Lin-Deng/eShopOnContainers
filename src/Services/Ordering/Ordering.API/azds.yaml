@@ -4,7 +4,7 @@ build:
   context: ..\..\..\..
   dockerfile: Dockerfile
 install:
-  chart: ../../../../k8s/helm/ordering-api
+  chart: ../../../../k8s/helm/ordering.api
   set:
     replicaCount: 1
     image:

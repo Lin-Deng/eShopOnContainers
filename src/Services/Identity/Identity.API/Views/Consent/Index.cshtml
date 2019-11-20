@@ -9,7 +9,10 @@
             }
             <h1>
                 @Model.ClientName
+
                 <small>正在请求你的权限</small>
+
+
             </h1>
         </div>
     </div>
@@ -21,7 +24,9 @@
             <form asp-action="Index" class="consent-form">
                 <input type="hidden" asp-for="ReturnUrl" />
 
-                <div>你不想检查权限</div>
+
+                <div>检查权限</div>
+
                 
                 @if (Model.IdentityScopes.Any())
                 {
@@ -60,7 +65,8 @@
                     <div class="consent-remember">
                         <label>
                             <input class="consent-scopecheck" asp-for="RememberConsent" />
-                            <strong>记住我的账户</strong>
+
+                            <strong>记住我的选择</strong>
                         </label>
                     </div>
                 }

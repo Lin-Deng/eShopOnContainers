@@ -2,12 +2,13 @@
 
 <div class="container logout-page">
     <div class="page-header">
-        <h1>Logout</h1>
+        <h1>退出</h1>
     </div>
 
     <div class="row">
         <div class="col-sm-6">
-            <p>是否退出登录</p>
+
+            <p>确定退出？</p>
             <form asp-action="Logout">
                 <input type="hidden" name="logoutId" value="@Model.LogoutId"  />
                 <fieldset>

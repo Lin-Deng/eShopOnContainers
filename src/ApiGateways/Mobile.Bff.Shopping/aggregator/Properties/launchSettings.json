@@ -16,14 +16,13 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "PurchaseForMvc": {
+    "Microsoft.eShopOnContainers.Mobile.Shopping.HttpAggregator": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:61632/"
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
     },
     "Azure Dev Spaces": {
       "commandName": "AzureDevSpaces",

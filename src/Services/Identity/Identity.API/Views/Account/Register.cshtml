@@ -5,7 +5,8 @@
 <div class="brand-header-block">
     <ul class="container">
         <li class="active">注册</li>
-        <li style="margin-right: 65px;"><a asp-area="" asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]">登录</a></li>
+
+        <li style="margin-right: 65px;"><a asp-area="" asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]">登陆</a></li>
     </ul>
 </div>
 <div class="container register-container">
@@ -14,12 +15,14 @@
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="row">
             <div class="form-group col-sm-6">
-                <label asp-for="User.Name" class="control-label form-label">名字</label>
+
+                <label asp-for="User.Name" class="control-label form-label">名</label>
+
                 <input asp-for="User.Name" class="form-control form-input" />
                 <span asp-validation-for="User.Name" class="text-danger" />
             </div>
             <div class="form-group col-sm-6">
-                <label asp-for="User.LastName" class="control-label form-label">姓氏</label>
+                <label asp-for="User.LastName" class="control-label form-label">姓</label>
                 <input asp-for="User.LastName" class="form-control form-input" />
                 <span asp-validation-for="User.LastName" class="text-danger" />
             </div>
@@ -59,7 +62,8 @@
                 <span asp-validation-for="User.CardNumber" class="text-danger" />
             </div>
             <div class="form-group col-sm-6">
-                <label asp-for="User.CardHolderName" class="control-label form-label">持卡人名称</label>
+                <label asp-for="User.CardHolderName" class="control-label form-label">持卡人姓名</label>
+
                 <input asp-for="User.CardHolderName" class="form-control form-input" />
                 <span asp-validation-for="User.CardHolderName" class="text-danger" />
             </div>

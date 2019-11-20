@@ -4,12 +4,13 @@
     <h1>
         退出
         <small>你已退出</small>
+
     </h1>
 
     @if (Model.PostLogoutRedirectUri != null)
     {
         <div>
-            Click <a href="@Model.PostLogoutRedirectUri">here</a> to return to the
+            Click <a href="@Model.PostLogoutRedirectUri">这里</a> 返回主页
             <span>@Model.ClientName</span> application.
         </div>
     }

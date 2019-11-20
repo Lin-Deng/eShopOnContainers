@@ -91,7 +91,6 @@ namespace WebMVC.Infrastructure
                 log.Error(ex, "EXCEPTION ERROR: {Message}", ex.Message);
             }
         }
-
     }
 
 }

@@ -2,12 +2,12 @@
 
 
 @{
-    ViewData["Title"] = "登录";
+    ViewData["Title"] = "登陆";
 }
 <div class="brand-header-block">
     <ul class="container">
         <li><a asp-area="" asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">注册</a></li>
-        <li class="active" style="margin-right: 65px;">登录</li>
+        <li class="active" style="margin-right: 65px;">登陆</li>
     </ul>
 </div>
 <div class="container account-login-container">
@@ -16,7 +16,7 @@
             <section>
                 <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
                     <input type="hidden" asp-for="ReturnUrl" />
-                    <h4>是否注册?</h4>
+                    <h4>是否注册</h4>
                     <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Email" class="control-label form-label"></label>
@@ -42,14 +42,17 @@
                     <p>
                         <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" class="text">注册为新用户?</a>
                     </p>
+
                     <p>
-                        请用下面的账号注册下
+                        请使用下列用户名注册
                     </p>
                     <p>
                         用户名:     <b>demouser@microsoft.com</b>
                     </p>
                     <p>
+
                         密码: <b>Pass@word1</b>
+
                     </p>
                 </form>
             </section>

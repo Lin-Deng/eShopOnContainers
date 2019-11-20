@@ -110,7 +110,6 @@ namespace Microsoft.eShopOnContainers.Mobile.Shopping.HttpAggregator
 
             services.AddSwaggerGen(options =>
             {
-                options.DescribeAllEnumsAsStrings();
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "Shopping Aggregator for Mobile Clients",

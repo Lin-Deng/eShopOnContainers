@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using HealthChecks.UI.Client;
+using Infrastructure.ServiceDiscovery;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -47,7 +48,7 @@ namespace Ordering.SignalrHub
                         .SetIsOriginAllowed((host) => true)
                         .AllowCredentials());
                 });
-
+            services.RegisterConsulServices(Configuration.GetServiceConfig());
             if (Configuration.GetValue<string>("IsClusterEnv") == bool.TrueString)
             {
                 services

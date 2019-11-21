@@ -14,6 +14,7 @@
     using Extensions.Configuration;
     using Extensions.DependencyInjection;
     using Extensions.Logging;
+    using global::Infrastructure.ServiceDiscovery;
     using HealthChecks.UI.Client;
     using Infrastructure;
     using Infrastructure.Filters;
@@ -49,7 +50,7 @@
         public virtual IServiceProvider ConfigureServices(IServiceCollection services)
         {
             RegisterAppInsights(services);
-
+            services.RegisterConsulServices(Configuration.GetServiceConfig());
             // Add framework services.
             services.AddCustomHealthCheck(Configuration);
             services

@@ -6,12 +6,12 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk AS build
 WORKDIR /src
 
-COPY src/scripts scripts/
+COPY scripts scripts/
 
-COPY src/ApiGateways/*/*/*.csproj csproj-files/
-COPY src/BuildingBlocks/*/*/*.csproj csproj-files/
-COPY src/Services/*/*/*.csproj csproj-files/
-COPY src/Web/*/*.csproj csproj-files/
+COPY Common/*/*.csproj csproj-files/
+COPY BuildingBlocks/*/*/*.csproj csproj-files/
+COPY Services/*/*/*.csproj csproj-files/
+COPY Web/*/*.csproj csproj-files/
 
 COPY . .
 WORKDIR /src/Services/Catalog/Catalog.API

@@ -2,6 +2,7 @@
 using Autofac.Extensions.DependencyInjection;
 using Devspaces.Support;
 using HealthChecks.UI.Client;
+using Infrastructure.ServiceDiscovery;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -61,7 +62,7 @@ namespace Webhooks.API
                 .AddTransient<IWebhooksRetriever, WebhooksRetriever>()
                 .AddTransient<IWebhooksSender, WebhooksSender>()
                 .AddApplicationInsightsTelemetry();
-
+            services.RegisterConsulServices(Configuration.GetServiceConfig());
             var container = new ContainerBuilder();
             container.Populate(services);
             return new AutofacServiceProvider(container.Build());

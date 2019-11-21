@@ -36,6 +36,7 @@ using System.IO;
 using GrpcBasket;
 using Microsoft.AspNetCore.Http.Features;
 using Serilog;
+using Infrastructure.ServiceDiscovery;
 
 namespace Microsoft.eShopOnContainers.Services.Basket.API
 {
@@ -51,13 +52,14 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public virtual IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            
             services.AddGrpc(options =>
             {
                 options.EnableDetailedErrors = true;
             });
 
             RegisterAppInsights(services);
-
+            services.RegisterConsulServices(Configuration.GetServiceConfig());
             services.AddControllers(options =>
                 {
                     options.Filters.Add(typeof(HttpGlobalExceptionFilter));

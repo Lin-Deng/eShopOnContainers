@@ -5,12 +5,12 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/core/sdk AS build
 WORKDIR /src
 
-COPY src/scripts scripts/
+COPY scripts scripts/
 
-COPY src/ApiGateways/*/*/*.csproj .
-COPY src/BuildingBlocks/*/*/*.csproj .
-COPY src/Services/*/*/*.csproj .
-COPY src/Web/*/*.csproj .
+COPY Common/*/*.csproj csproj-files/
+COPY BuildingBlocks/*/*/*.csproj csproj-files/
+COPY Services/*/*/*.csproj csproj-files/
+COPY Web/*/*.csproj csproj-files/
 
 COPY . .
 WORKDIR /src/Services/Webhooks/Webhooks.API

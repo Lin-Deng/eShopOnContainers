@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using HealthChecks.UI.Client;
+using Infrastructure.ServiceDiscovery;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Azure.ServiceBus;
@@ -35,7 +36,7 @@ namespace Payment.API
             services.Configure<PaymentSettings>(Configuration);
 
             RegisterAppInsights(services);
-
+            services.RegisterConsulServices(Configuration.GetServiceConfig());
             if (Configuration.GetValue<bool>("AzureServiceBusEnabled"))
             {
                 services.AddSingleton<IServiceBusPersisterConnection>(sp =>

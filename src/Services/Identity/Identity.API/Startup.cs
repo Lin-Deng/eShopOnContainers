@@ -2,6 +2,7 @@
 using Autofac.Extensions.DependencyInjection;
 using HealthChecks.UI.Client;
 using IdentityServer4.Services;
+using Infrastructure.ServiceDiscovery;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -37,7 +38,7 @@ namespace Microsoft.eShopOnContainers.Services.Identity.API
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             RegisterAppInsights(services);
-
+            services.RegisterConsulServices(Configuration.GetServiceConfig());
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration["ConnectionString"],

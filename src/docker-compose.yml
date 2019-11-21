@@ -140,6 +140,4 @@ services:
       dockerfile: ApiGateways/ApiGateWays/Dockerfile
   consul:
     image: consul:latest
-    command: consul agent -dev -log-level=warn -ui -client=0.0.0.0
     hostname: consul
-    container_name: consul

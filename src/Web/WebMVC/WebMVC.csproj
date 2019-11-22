@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="$(AspNetCore_HealthChecks_UI_Client)" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.0.0" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.0.0" />
     <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="3.0.0" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.435" />

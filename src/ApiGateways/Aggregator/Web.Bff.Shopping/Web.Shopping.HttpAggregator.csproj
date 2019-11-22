@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>$(NetCoreTargetVersion)</TargetFramework>
+    <AssemblyName>Web.Shopping.HttpAggregator</AssemblyName>
+    <RootNamespace>Microsoft.eShopOnContainers.Web.Shopping.HttpAggregator</RootNamespace>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <GenerateErrorForMissingTargetingPacks>false</GenerateErrorForMissingTargetingPacks>
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+    <LangVersion>$(LangVersion)</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'PurchaseForMvc' ">
+    <StartAction>Project</StartAction>
+    <LaunchUrl>api/values</LaunchUrl>
+    <ApplicationURL>http://localhost:61632/</ApplicationURL>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Devspaces.Support\Devspaces.Support.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\..\..\Services\Basket\Basket.API\Proto\basket.proto" GrpcServices="Client" />
+    <Protobuf Include="..\..\..\Services\Catalog\Catalog.API\Proto\catalog.proto" GrpcServices="Client" />
+    <Protobuf Include="..\..\..\Services\Ordering\Ordering.API\Proto\ordering.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="3.0.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.25.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.ClientFactory" Version="2.25.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.25.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Grpc.Core" Version="2.25.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.10.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.0.0-rc4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0-rc4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.0.0-rc4" />
+  </ItemGroup>
+</Project>
+

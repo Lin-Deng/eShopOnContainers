@@ -132,7 +132,18 @@ services:
       dockerfile: Web/WebhookClient/Dockerfile
     depends_on:
       - api.gateway
-    
+
+  api.webshoppingagg:
+    image: ${REGISTRY:-eshop}/api.webshoppingagg:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: ApiGateways/Aggregator/Web.Bff.Shopping/Dockerfile
+    depends_on:
+      - nosql.data
+      - sql.data
+      - rabbitmq
+      - api.gateway
+
   api.gateway:
     image: ${REGISTRY:-eshop}/api.gateway:${PLATFORM:-linux}-${TAG:-latest}
     build:

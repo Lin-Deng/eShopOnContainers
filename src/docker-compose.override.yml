@@ -296,7 +296,20 @@ services:
       - identityUrl=http://identity.api              #Local: You need to open your local dev-machine firewall at range 5100-5110.
     ports:
       - "5112:80"
-
+  api.webshoppingagg:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - urls__basket=http://basket.api
+      - urls__catalog=http://catalog.api
+      - urls__orders=http://ordering.api
+      - urls__identity=http://identity.api              #Local: You need to open your local dev-machine firewall at range 5100-5110.
+      - ServiceConfig__serviceDiscoveryAddress=http://consul:8500
+      - ServiceConfig__serviceAddress=http://api.webshoppingagg
+      - ServiceConfig__serviceName=webshoppingagg
+      - ServiceConfig__serviceId=webshoppingagg-v1
+    ports:
+      - "80"   # Important: In a production environment your should remove the external port (5121) kept here for microservice debugging purposes. 
+                    # The API Gateway redirects and access through the internal port (80).
   api.gateway:
      environment:
       - ASPNETCORE_ENVIRONMENT=Development

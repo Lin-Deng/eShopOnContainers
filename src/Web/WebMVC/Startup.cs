@@ -218,7 +218,6 @@ namespace Microsoft.eShopOnContainers.WebMVC
                 options.Scope.Add("basket");
                 options.Scope.Add("marketing");
                 options.Scope.Add("locations");
-                options.Scope.Add("webshoppingagg");
                 options.Scope.Add("orders.signalrhub");
             });
 

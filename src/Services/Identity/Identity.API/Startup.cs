@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.eShopOnContainers.Services.Identity.API.Certificates;
+using Microsoft.eShopOnContainers.Services.Identity.API.Configuration;
 using Microsoft.eShopOnContainers.Services.Identity.API.Data;
 using Microsoft.eShopOnContainers.Services.Identity.API.Devspaces;
 using Microsoft.eShopOnContainers.Services.Identity.API.Models;
